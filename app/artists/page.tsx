@@ -111,51 +111,51 @@ export default function ArtistsPage() {
     searchQuery.trim() !== ""
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-slate-900">
       {/* Page Header - Dark Theme */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-purple-900/30 to-pink-900/30 border-b border-border">
-        <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
+      <div className="relative overflow-hidden bg-gradient-to-r from-purple-900/40 to-pink-900/40 border-b border-slate-700">
+        <div className="absolute inset-0 bg-slate-900/90 backdrop-blur-sm"></div>
         <div className="relative max-w-7xl mx-auto px-4 py-16">
           <div className="text-center">
             <Badge variant="secondary" className="mb-4 bg-purple-500/20 text-purple-300 border-purple-500/30">
               <Sparkles className="w-4 h-4 mr-2" />
               Discover Exceptional Talent
             </Badge>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 font-playfair">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 font-playfair">
               Browse{" "}
               <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Artists
               </span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-slate-300 max-w-2xl mx-auto">
               Find the perfect performer for your next event from our curated collection of verified artists
             </p>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 py-8 bg-slate-900">
         {/* Search and Sort Controls - Dark Theme */}
-        <Card className="mb-8 border border-border bg-card backdrop-blur-sm">
+        <Card className="mb-8 border border-slate-700 bg-slate-800/50 backdrop-blur-sm">
           <CardContent className="p-6">
             <div className="flex flex-col lg:flex-row gap-4">
               {/* Search Input */}
               <div className="flex-1 relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 h-4 w-4" />
                 <Input
                   placeholder="Search artists by name, category, or location..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 bg-background border-border"
+                  className="pl-10 bg-slate-800 border-slate-600 text-white placeholder:text-slate-400"
                 />
               </div>
 
               {/* Sort Dropdown */}
               <Select value={sortBy} onValueChange={setSortBy}>
-                <SelectTrigger className="w-full lg:w-48 bg-background border-border">
+                <SelectTrigger className="w-full lg:w-48 bg-slate-800 border-slate-600 text-white">
                   <SelectValue placeholder="Sort by" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-slate-800 border-slate-600">
                   <SelectItem value="name">Name (A-Z)</SelectItem>
                   <SelectItem value="rating">Highest Rated</SelectItem>
                   <SelectItem value="price">Price (Low to High)</SelectItem>
@@ -167,7 +167,7 @@ export default function ArtistsPage() {
               <Button
                 variant="outline"
                 onClick={() => setShowFilters(!showFilters)}
-                className="lg:hidden border-border hover:bg-purple-500/10"
+                className="lg:hidden border-slate-600 text-white hover:bg-purple-500/10"
               >
                 <SlidersHorizontal className="h-4 w-4 mr-2" />
                 Filters
@@ -176,9 +176,9 @@ export default function ArtistsPage() {
 
             {/* Active Filters Display */}
             {hasActiveFilters && (
-              <div className="mt-6 pt-4 border-t border-border">
+              <div className="mt-6 pt-4 border-t border-slate-700">
                 <div className="flex flex-wrap gap-2 items-center">
-                  <span className="text-sm text-muted-foreground mr-2">Active filters:</span>
+                  <span className="text-sm text-slate-400 mr-2">Active filters:</span>
 
                   {searchQuery.trim() && (
                     <Badge variant="secondary" className="bg-purple-500/20 text-purple-300 border-purple-500/30">
@@ -239,19 +239,19 @@ export default function ArtistsPage() {
           {/* Artists Grid */}
           <div className="lg:w-3/4">
             <div className="mb-6 flex justify-between items-center">
-              <p className="text-muted-foreground">
-                Showing <span className="font-semibold text-foreground">{filteredArtists.length}</span> of{" "}
-                <span className="font-semibold text-foreground">{artists.length}</span> artists
+              <p className="text-slate-400">
+                Showing <span className="font-semibold text-white">{filteredArtists.length}</span> of{" "}
+                <span className="font-semibold text-white">{artists.length}</span> artists
               </p>
             </div>
 
             {/* Conditional Rendering - No Results */}
             {filteredArtists.length === 0 ? (
-              <Card className="border border-border bg-card backdrop-blur-sm">
+              <Card className="border border-slate-700 bg-slate-800/50 backdrop-blur-sm">
                 <CardContent className="text-center py-16">
-                  <Filter className="h-16 w-16 text-muted-foreground mx-auto mb-4 opacity-50" />
-                  <h3 className="text-xl font-semibold text-foreground mb-2 font-playfair">No artists found</h3>
-                  <p className="text-muted-foreground mb-6">No artists match your current search criteria</p>
+                  <Filter className="h-16 w-16 text-slate-500 mx-auto mb-4 opacity-50" />
+                  <h3 className="text-xl font-semibold text-white mb-2 font-playfair">No artists found</h3>
+                  <p className="text-slate-400 mb-6">No artists match your current search criteria</p>
                   <Button
                     onClick={clearAllFilters}
                     className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0"

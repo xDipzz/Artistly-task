@@ -15,7 +15,7 @@ interface ArtistCardProps {
  */
 export default function ArtistCard({ artist }: ArtistCardProps) {
   return (
-    <Card className="artistic-hover border border-border bg-card backdrop-blur-sm overflow-hidden group">
+    <Card className="artistic-hover border border-slate-700 bg-slate-800/50 backdrop-blur-sm overflow-hidden group">
       {/* Artist Image Section */}
       <div className="aspect-square bg-gradient-to-br from-purple-500/10 to-pink-500/10 relative overflow-hidden">
         <img
@@ -44,7 +44,7 @@ export default function ArtistCard({ artist }: ArtistCardProps) {
       <CardContent className="p-6">
         {/* Artist Basic Info */}
         <div className="mb-4">
-          <h3 className="text-xl font-semibold text-foreground mb-2 font-playfair">{artist.name}</h3>
+          <h3 className="text-xl font-semibold text-white mb-2 font-playfair">{artist.name}</h3>
 
           {/* Category Badges - Data Mapping */}
           <div className="flex flex-wrap gap-1 mb-3">
@@ -68,29 +68,29 @@ export default function ArtistCard({ artist }: ArtistCardProps) {
 
         {/* Artist Details */}
         <div className="space-y-3 mb-4">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <div className="flex items-center gap-2 text-sm text-slate-400">
             <MapPin className="h-4 w-4 flex-shrink-0 text-purple-400" />
             <span>{artist.location}</span>
           </div>
 
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <div className="flex items-center gap-2 text-sm text-slate-400">
             <Star className="h-4 w-4 text-yellow-400 fill-current flex-shrink-0" />
-            <span className="font-medium text-foreground">{artist.rating}</span>
+            <span className="font-medium text-white">{artist.rating}</span>
             <span>({Math.floor(Math.random() * 50) + 10} reviews)</span>
           </div>
 
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <div className="flex items-center gap-2 text-sm text-slate-400">
             <Clock className="h-4 w-4 flex-shrink-0 text-emerald-400" />
             <span>{artist.experience}</span>
           </div>
 
-          <div className="flex items-start gap-2 text-sm text-muted-foreground">
+          <div className="flex items-start gap-2 text-sm text-slate-400">
             <Languages className="h-4 w-4 flex-shrink-0 mt-0.5 text-cyan-400" />
             <div>
               <span className="block">
                 {artist.languages.slice(0, 3).join(", ")}
                 {artist.languages.length > 3 && (
-                  <span className="text-muted-foreground/70"> +{artist.languages.length - 3} more</span>
+                  <span className="text-slate-500"> +{artist.languages.length - 3} more</span>
                 )}
               </span>
             </div>
@@ -99,10 +99,10 @@ export default function ArtistCard({ artist }: ArtistCardProps) {
 
         {/* Artist Bio */}
         <div className="mb-4">
-          <p className="text-sm text-muted-foreground line-clamp-2 leading-relaxed">{artist.bio}</p>
+          <p className="text-sm text-slate-400 line-clamp-2 leading-relaxed">{artist.bio}</p>
         </div>
 
-        <Separator className="my-4 bg-border" />
+        <Separator className="my-4 bg-slate-700" />
 
         {/* Pricing and CTA */}
         <div className="flex items-center justify-between mb-4">
@@ -110,14 +110,14 @@ export default function ArtistCard({ artist }: ArtistCardProps) {
             <p className="text-lg font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
               {artist.priceRange}
             </p>
-            <p className="text-xs text-muted-foreground">per event</p>
+            <p className="text-xs text-slate-500">per event</p>
           </div>
           <div className="text-right">
             <div className="flex items-center gap-1">
               <Sparkles className="h-3 w-3 text-yellow-400" />
-              <p className="text-sm font-medium text-foreground">Premium</p>
+              <p className="text-sm font-medium text-white">Premium</p>
             </div>
-            <p className="text-xs text-muted-foreground">Verified artist</p>
+            <p className="text-xs text-slate-500">Verified artist</p>
           </div>
         </div>
 

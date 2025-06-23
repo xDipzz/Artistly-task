@@ -125,12 +125,12 @@ export default function FilterSection({ onFilterChange, currentFilters }: Filter
   const hasActiveFilters = activeFilterCount > 0
 
   return (
-    <Card className="sticky top-4 border border-border bg-card backdrop-blur-sm">
+    <Card className="sticky top-4 border border-slate-700 bg-slate-800/50 backdrop-blur-sm">
       <CardHeader>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Filter className="h-5 w-5 text-purple-400" />
-            <CardTitle className="text-lg text-foreground font-playfair">Filters</CardTitle>
+            <CardTitle className="text-lg text-white font-playfair">Filters</CardTitle>
             {hasActiveFilters && (
               <Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0">
                 <Sparkles className="w-3 h-3 mr-1" />
@@ -157,7 +157,7 @@ export default function FilterSection({ onFilterChange, currentFilters }: Filter
         <Collapsible open={!collapsedSections.categories} onOpenChange={() => toggleSection("categories")}>
           <CollapsibleTrigger asChild>
             <Button variant="ghost" className="w-full justify-between p-0 h-auto hover:bg-transparent">
-              <Label className="text-base font-medium cursor-pointer font-playfair">
+              <Label className="text-base font-medium cursor-pointer font-playfair text-white">
                 Categories
                 {localFilters.categories.length > 0 && (
                   <Badge className="ml-2 bg-purple-500/20 text-purple-300 border-purple-500/30">
@@ -165,7 +165,7 @@ export default function FilterSection({ onFilterChange, currentFilters }: Filter
                   </Badge>
                 )}
               </Label>
-              <ChevronDown className="h-4 w-4 text-muted-foreground" />
+              <ChevronDown className="h-4 w-4 text-slate-400" />
             </Button>
           </CollapsibleTrigger>
 
@@ -176,11 +176,11 @@ export default function FilterSection({ onFilterChange, currentFilters }: Filter
                   id={`category-${category}`}
                   checked={localFilters.categories.includes(category)}
                   onCheckedChange={(checked) => handleCategoryChange(category, checked as boolean)}
-                  className="border-border data-[state=checked]:bg-purple-600 data-[state=checked]:border-purple-600"
+                  className="border-slate-600 data-[state=checked]:bg-purple-600 data-[state=checked]:border-purple-600"
                 />
                 <Label
                   htmlFor={`category-${category}`}
-                  className="text-sm font-normal cursor-pointer flex-1 text-muted-foreground hover:text-foreground"
+                  className="text-sm font-normal cursor-pointer flex-1 text-slate-300 hover:text-white"
                 >
                   {category}
                 </Label>
@@ -189,13 +189,13 @@ export default function FilterSection({ onFilterChange, currentFilters }: Filter
           </CollapsibleContent>
         </Collapsible>
 
-        <Separator className="bg-border" />
+        <Separator className="bg-slate-700" />
 
         {/* Locations Filter */}
         <Collapsible open={!collapsedSections.locations} onOpenChange={() => toggleSection("locations")}>
           <CollapsibleTrigger asChild>
             <Button variant="ghost" className="w-full justify-between p-0 h-auto hover:bg-transparent">
-              <Label className="text-base font-medium cursor-pointer font-playfair">
+              <Label className="text-base font-medium cursor-pointer font-playfair text-white">
                 Location
                 {localFilters.locations.length > 0 && (
                   <Badge className="ml-2 bg-emerald-500/20 text-emerald-300 border-emerald-500/30">
@@ -203,7 +203,7 @@ export default function FilterSection({ onFilterChange, currentFilters }: Filter
                   </Badge>
                 )}
               </Label>
-              <ChevronDown className="h-4 w-4 text-muted-foreground" />
+              <ChevronDown className="h-4 w-4 text-slate-400" />
             </Button>
           </CollapsibleTrigger>
 
@@ -214,11 +214,11 @@ export default function FilterSection({ onFilterChange, currentFilters }: Filter
                   id={`location-${location}`}
                   checked={localFilters.locations.includes(location)}
                   onCheckedChange={(checked) => handleLocationChange(location, checked as boolean)}
-                  className="border-border data-[state=checked]:bg-emerald-600 data-[state=checked]:border-emerald-600"
+                  className="border-slate-600 data-[state=checked]:bg-emerald-600 data-[state=checked]:border-emerald-600"
                 />
                 <Label
                   htmlFor={`location-${location}`}
-                  className="text-sm font-normal cursor-pointer flex-1 text-muted-foreground hover:text-foreground"
+                  className="text-sm font-normal cursor-pointer flex-1 text-slate-300 hover:text-white"
                 >
                   {location}
                 </Label>
@@ -227,13 +227,13 @@ export default function FilterSection({ onFilterChange, currentFilters }: Filter
           </CollapsibleContent>
         </Collapsible>
 
-        <Separator className="bg-border" />
+        <Separator className="bg-slate-700" />
 
         {/* Price Range Filter */}
         <Collapsible open={!collapsedSections.priceRanges} onOpenChange={() => toggleSection("priceRanges")}>
           <CollapsibleTrigger asChild>
             <Button variant="ghost" className="w-full justify-between p-0 h-auto hover:bg-transparent">
-              <Label className="text-base font-medium cursor-pointer font-playfair">
+              <Label className="text-base font-medium cursor-pointer font-playfair text-white">
                 Price Range
                 {localFilters.priceRanges.length > 0 && (
                   <Badge className="ml-2 bg-cyan-500/20 text-cyan-300 border-cyan-500/30">
@@ -241,7 +241,7 @@ export default function FilterSection({ onFilterChange, currentFilters }: Filter
                   </Badge>
                 )}
               </Label>
-              <ChevronDown className="h-4 w-4 text-muted-foreground" />
+              <ChevronDown className="h-4 w-4 text-slate-400" />
             </Button>
           </CollapsibleTrigger>
 
@@ -252,11 +252,11 @@ export default function FilterSection({ onFilterChange, currentFilters }: Filter
                   id={`price-${priceRange}`}
                   checked={localFilters.priceRanges.includes(priceRange)}
                   onCheckedChange={(checked) => handlePriceRangeChange(priceRange, checked as boolean)}
-                  className="border-border data-[state=checked]:bg-cyan-600 data-[state=checked]:border-cyan-600"
+                  className="border-slate-600 data-[state=checked]:bg-cyan-600 data-[state=checked]:border-cyan-600"
                 />
                 <Label
                   htmlFor={`price-${priceRange}`}
-                  className="text-sm font-normal cursor-pointer flex-1 text-muted-foreground hover:text-foreground"
+                  className="text-sm font-normal cursor-pointer flex-1 text-slate-300 hover:text-white"
                 >
                   {priceRange}
                 </Label>
