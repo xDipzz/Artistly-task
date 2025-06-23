@@ -43,25 +43,25 @@ const featuredArtists = [
     location: "Mumbai",
     rating: 4.9,
     price: "₹15,000 - ₹25,000",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b5bc?w=300&h=300&fit=crop&crop=face",
     verified: true,
   },
   {
-    name: "Rahul Mehta",
-    category: "Stand-up Comedian",
-    location: "Delhi",
+    name: "James Anderson",
+    category: "International Comedian",
+    location: "Bangalore",
     rating: 4.8,
-    price: "₹20,000 - ₹35,000",
-    image: "/placeholder.svg?height=300&width=300",
+    price: "₹35,000 - ₹60,000",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
     verified: true,
   },
   {
-    name: "Anjali Nair",
-    category: "Bharatanatyam Dancer",
-    location: "Chennai",
-    rating: 4.9,
-    price: "₹12,000 - ₹20,000",
-    image: "/placeholder.svg?height=300&width=300",
+    name: "Isabella Rodriguez",
+    category: "Salsa Dancer",
+    location: "Mumbai",
+    rating: 4.5,
+    price: "₹25,000 - ₹45,000",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop&crop=face",
     verified: true,
   },
 ]
@@ -220,6 +220,11 @@ export default function HomePage() {
                     src={artist.image || "/placeholder.svg"}
                     alt={`${artist.name} - ${artist.category} from ${artist.location}`}
                     className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = "/placeholder.svg";
+                    }}
+                    loading="lazy"
                   />
                   {artist.verified && (
                     <Badge className="absolute top-3 right-3 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white border-0">
