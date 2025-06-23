@@ -22,6 +22,11 @@ export default function ArtistCard({ artist }: ArtistCardProps) {
           src={artist.image || "/placeholder.svg"}
           alt={`${artist.name} - ${artist.category.join(", ")} from ${artist.location}`}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = "/placeholder.svg";
+          }}
+          loading="lazy"
         />
 
         {/* Primary Category Badge */}
