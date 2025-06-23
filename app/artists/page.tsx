@@ -112,11 +112,12 @@ export default function ArtistsPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Page Header */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-purple-900/20 to-pink-900/20 border-b border-border/50">
-        <div className="max-w-7xl mx-auto px-4 py-16">
+      {/* Page Header - Dark Theme */}
+      <div className="relative overflow-hidden bg-gradient-to-r from-purple-900/30 to-pink-900/30 border-b border-border">
+        <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
+        <div className="relative max-w-7xl mx-auto px-4 py-16">
           <div className="text-center">
-            <Badge variant="secondary" className="mb-4 bg-purple-500/10 text-purple-400 border-purple-500/20">
+            <Badge variant="secondary" className="mb-4 bg-purple-500/20 text-purple-300 border-purple-500/30">
               <Sparkles className="w-4 h-4 mr-2" />
               Discover Exceptional Talent
             </Badge>
@@ -134,8 +135,8 @@ export default function ArtistsPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-8">
-        {/* Search and Sort Controls */}
-        <Card className="mb-8 border-0 bg-card/50 backdrop-blur-sm">
+        {/* Search and Sort Controls - Dark Theme */}
+        <Card className="mb-8 border border-border bg-card backdrop-blur-sm">
           <CardContent className="p-6">
             <div className="flex flex-col lg:flex-row gap-4">
               {/* Search Input */}
@@ -145,13 +146,13 @@ export default function ArtistsPage() {
                   placeholder="Search artists by name, category, or location..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 bg-background/50 border-border/50"
+                  className="pl-10 bg-background border-border"
                 />
               </div>
 
               {/* Sort Dropdown */}
               <Select value={sortBy} onValueChange={setSortBy}>
-                <SelectTrigger className="w-full lg:w-48 bg-background/50 border-border/50">
+                <SelectTrigger className="w-full lg:w-48 bg-background border-border">
                   <SelectValue placeholder="Sort by" />
                 </SelectTrigger>
                 <SelectContent>
@@ -166,7 +167,7 @@ export default function ArtistsPage() {
               <Button
                 variant="outline"
                 onClick={() => setShowFilters(!showFilters)}
-                className="lg:hidden border-border/50 hover:bg-purple-500/10"
+                className="lg:hidden border-border hover:bg-purple-500/10"
               >
                 <SlidersHorizontal className="h-4 w-4 mr-2" />
                 Filters
@@ -175,12 +176,12 @@ export default function ArtistsPage() {
 
             {/* Active Filters Display */}
             {hasActiveFilters && (
-              <div className="mt-6 pt-4 border-t border-border/50">
+              <div className="mt-6 pt-4 border-t border-border">
                 <div className="flex flex-wrap gap-2 items-center">
                   <span className="text-sm text-muted-foreground mr-2">Active filters:</span>
 
                   {searchQuery.trim() && (
-                    <Badge variant="secondary" className="bg-purple-500/10 text-purple-400 border-purple-500/20">
+                    <Badge variant="secondary" className="bg-purple-500/20 text-purple-300 border-purple-500/30">
                       Search: "{searchQuery}"
                     </Badge>
                   )}
@@ -189,7 +190,7 @@ export default function ArtistsPage() {
                     <Badge
                       key={category}
                       variant="secondary"
-                      className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                      className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30"
                     >
                       {category}
                     </Badge>
@@ -199,7 +200,7 @@ export default function ArtistsPage() {
                     <Badge
                       key={location}
                       variant="secondary"
-                      className="bg-cyan-500/10 text-cyan-400 border-cyan-500/20"
+                      className="bg-cyan-500/20 text-cyan-300 border-cyan-500/30"
                     >
                       {location}
                     </Badge>
@@ -209,7 +210,7 @@ export default function ArtistsPage() {
                     <Badge
                       key={range}
                       variant="secondary"
-                      className="bg-orange-500/10 text-orange-400 border-orange-500/20"
+                      className="bg-orange-500/20 text-orange-300 border-orange-500/30"
                     >
                       {range}
                     </Badge>
@@ -246,7 +247,7 @@ export default function ArtistsPage() {
 
             {/* Conditional Rendering - No Results */}
             {filteredArtists.length === 0 ? (
-              <Card className="border-0 bg-card/50 backdrop-blur-sm">
+              <Card className="border border-border bg-card backdrop-blur-sm">
                 <CardContent className="text-center py-16">
                   <Filter className="h-16 w-16 text-muted-foreground mx-auto mb-4 opacity-50" />
                   <h3 className="text-xl font-semibold text-foreground mb-2 font-playfair">No artists found</h3>

@@ -125,7 +125,7 @@ export default function FilterSection({ onFilterChange, currentFilters }: Filter
   const hasActiveFilters = activeFilterCount > 0
 
   return (
-    <Card className="sticky top-4 border-0 bg-card/80 backdrop-blur-sm">
+    <Card className="sticky top-4 border border-border bg-card backdrop-blur-sm">
       <CardHeader>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -160,7 +160,7 @@ export default function FilterSection({ onFilterChange, currentFilters }: Filter
               <Label className="text-base font-medium cursor-pointer font-playfair">
                 Categories
                 {localFilters.categories.length > 0 && (
-                  <Badge className="ml-2 bg-purple-500/10 text-purple-400 border-purple-500/20">
+                  <Badge className="ml-2 bg-purple-500/20 text-purple-300 border-purple-500/30">
                     {localFilters.categories.length}
                   </Badge>
                 )}
@@ -176,7 +176,7 @@ export default function FilterSection({ onFilterChange, currentFilters }: Filter
                   id={`category-${category}`}
                   checked={localFilters.categories.includes(category)}
                   onCheckedChange={(checked) => handleCategoryChange(category, checked as boolean)}
-                  className="border-border/50 data-[state=checked]:bg-purple-600 data-[state=checked]:border-purple-600"
+                  className="border-border data-[state=checked]:bg-purple-600 data-[state=checked]:border-purple-600"
                 />
                 <Label
                   htmlFor={`category-${category}`}
@@ -189,7 +189,7 @@ export default function FilterSection({ onFilterChange, currentFilters }: Filter
           </CollapsibleContent>
         </Collapsible>
 
-        <Separator className="bg-border/50" />
+        <Separator className="bg-border" />
 
         {/* Locations Filter */}
         <Collapsible open={!collapsedSections.locations} onOpenChange={() => toggleSection("locations")}>
@@ -198,7 +198,7 @@ export default function FilterSection({ onFilterChange, currentFilters }: Filter
               <Label className="text-base font-medium cursor-pointer font-playfair">
                 Location
                 {localFilters.locations.length > 0 && (
-                  <Badge className="ml-2 bg-emerald-500/10 text-emerald-400 border-emerald-500/20">
+                  <Badge className="ml-2 bg-emerald-500/20 text-emerald-300 border-emerald-500/30">
                     {localFilters.locations.length}
                   </Badge>
                 )}
@@ -214,7 +214,7 @@ export default function FilterSection({ onFilterChange, currentFilters }: Filter
                   id={`location-${location}`}
                   checked={localFilters.locations.includes(location)}
                   onCheckedChange={(checked) => handleLocationChange(location, checked as boolean)}
-                  className="border-border/50 data-[state=checked]:bg-emerald-600 data-[state=checked]:border-emerald-600"
+                  className="border-border data-[state=checked]:bg-emerald-600 data-[state=checked]:border-emerald-600"
                 />
                 <Label
                   htmlFor={`location-${location}`}
@@ -227,7 +227,7 @@ export default function FilterSection({ onFilterChange, currentFilters }: Filter
           </CollapsibleContent>
         </Collapsible>
 
-        <Separator className="bg-border/50" />
+        <Separator className="bg-border" />
 
         {/* Price Range Filter */}
         <Collapsible open={!collapsedSections.priceRanges} onOpenChange={() => toggleSection("priceRanges")}>
@@ -236,7 +236,7 @@ export default function FilterSection({ onFilterChange, currentFilters }: Filter
               <Label className="text-base font-medium cursor-pointer font-playfair">
                 Price Range
                 {localFilters.priceRanges.length > 0 && (
-                  <Badge className="ml-2 bg-cyan-500/10 text-cyan-400 border-cyan-500/20">
+                  <Badge className="ml-2 bg-cyan-500/20 text-cyan-300 border-cyan-500/30">
                     {localFilters.priceRanges.length}
                   </Badge>
                 )}
@@ -252,7 +252,7 @@ export default function FilterSection({ onFilterChange, currentFilters }: Filter
                   id={`price-${priceRange}`}
                   checked={localFilters.priceRanges.includes(priceRange)}
                   onCheckedChange={(checked) => handlePriceRangeChange(priceRange, checked as boolean)}
-                  className="border-border/50 data-[state=checked]:bg-cyan-600 data-[state=checked]:border-cyan-600"
+                  className="border-border data-[state=checked]:bg-cyan-600 data-[state=checked]:border-cyan-600"
                 />
                 <Label
                   htmlFor={`price-${priceRange}`}

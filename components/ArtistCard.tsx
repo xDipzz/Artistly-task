@@ -15,7 +15,7 @@ interface ArtistCardProps {
  */
 export default function ArtistCard({ artist }: ArtistCardProps) {
   return (
-    <Card className="artistic-hover border-0 bg-card/80 backdrop-blur-sm overflow-hidden group">
+    <Card className="artistic-hover border border-border bg-card backdrop-blur-sm overflow-hidden group">
       {/* Artist Image Section */}
       <div className="aspect-square bg-gradient-to-br from-purple-500/10 to-pink-500/10 relative overflow-hidden">
         <img
@@ -54,10 +54,10 @@ export default function ArtistCard({ artist }: ArtistCardProps) {
                 variant="secondary"
                 className={`text-xs ${
                   index === 0
-                    ? "bg-purple-500/10 text-purple-400 border-purple-500/20"
+                    ? "bg-purple-500/20 text-purple-300 border-purple-500/30"
                     : index === 1
-                      ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
-                      : "bg-cyan-500/10 text-cyan-400 border-cyan-500/20"
+                      ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/30"
+                      : "bg-cyan-500/20 text-cyan-300 border-cyan-500/30"
                 }`}
               >
                 {cat}
@@ -102,7 +102,7 @@ export default function ArtistCard({ artist }: ArtistCardProps) {
           <p className="text-sm text-muted-foreground line-clamp-2 leading-relaxed">{artist.bio}</p>
         </div>
 
-        <Separator className="my-4 bg-border/50" />
+        <Separator className="my-4 bg-border" />
 
         {/* Pricing and CTA */}
         <div className="flex items-center justify-between mb-4">
