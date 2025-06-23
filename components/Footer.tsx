@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Sparkles, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Heart } from "lucide-react"
+import { Sparkles, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, Heart } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
 
@@ -81,12 +81,6 @@ export default function Footer() {
                   <Mail className="h-4 w-4 text-purple-400" />
                 </div>
                 <span className="text-sm text-muted-foreground">hello@artistly.com</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="bg-emerald-500/10 p-2 rounded-lg">
-                  <Phone className="h-4 w-4 text-emerald-400" />
-                </div>
-                <span className="text-sm text-muted-foreground">+91 98765 43210</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="bg-cyan-500/10 p-2 rounded-lg">
